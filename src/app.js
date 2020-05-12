@@ -5,6 +5,7 @@ const forecast=require('./utils/forecast')
 const geocode=require('./utils/geocode')
 
 const app=express()
+const port=process.env.PORT || 3000
 app.use(express.static(path.join(__dirname,'../public')))
 const part=path.join(__dirname,'/partials')
 hbs.registerPartials(part)
@@ -63,6 +64,6 @@ app.get('*',(req,res)=>{
         name:'dishant'
     })
 })
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('server started')
 })
